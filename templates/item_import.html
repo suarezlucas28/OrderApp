@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block header %}
+    Import Items
+{% endblock %}
+
+{% block content %}
+<h3 style="text-align: left;">{{ text }}</h3>
+<form id="form1" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <td style="padding: 5px;"><button type="submit" class="btn btn-success" form="form1" value="Submit">Importar</button></td>
+        <td style="text-align: left;"><a class="btn btn-danger" href="{% url 'summary' %}" value="Submit">Cancelar</a></td>
+    </table>
+    <br></br>
+    
+</form>
+{% endblock %}
+
+

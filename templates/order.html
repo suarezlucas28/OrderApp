@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% load staticfiles %}
+{% block extrahead %}
+  <script src="{% static 'js/jquery.formset.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+    Order
+{% endblock %}
+
+{% block content %}
+<h3 style="text-align: left;">{{ text }}</h3>
+<form id="form1" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ main_form.as_table }}
+    </table>
+    
+</form>
+{% endblock %}

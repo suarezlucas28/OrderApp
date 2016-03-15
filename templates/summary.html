@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block header %}
+    Summary
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Clientes Pendientes</div>
+        <table class="table">
+            <tbody>
+            {% for customer in customer_not_order_yet %}
+                <tr>
+                    <td>
+                        {{ customer }}
+                    </td>
+                    <td>
+                        <a class="btn btn-success btn-xs"> Cargar Orden </a>
+                        <a class="btn btn-danger btn-xs"> No Ordenará </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        <table>
+    </div>
+</div>
+{% endblock %}
